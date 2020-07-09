@@ -1,30 +1,36 @@
 const greetButton = document.querySelector(".greetBtn");
 const greetTxt = document.querySelector(".greetText");
 const name = document.querySelector(".greetArea");
-const counter = document.querySelector(".counter")
+const counter = document.querySelector(".counter");
+const clearBtn = document.querySelector(".clearBtn")
 
-const namesLocalStorage = localStorage['namesGreeted'];
-  let currentFruitMap = null;
-  if (namesLocalStorage) {
-	currentFruitMap = JSON.parse(namesLocalStorage);
-  }
+var names=[];
+
+var namesLS = localStorage['namesGreeted'];
 
 const greetRadio = GreetRadio();
 
 greetButton.addEventListener('click', function(e){
 
-    var langChecked = document.querySelector("input[name='language']:checked");
-    if(langChecked){
-        var checkedLang = langChecked.value;
-        }
-        greetRadio.setLanguage(checkedLang);
-        var person = name.value.trim();
-        greetRadio.setName(person);
-        greetRadio.add()
+  var langChecked = document.querySelector("input[name='language']:checked");
+  if(langChecked){
+    var checkedLang = langChecked.value;
+    }
+  var person = name.value.trim();
 
+  greetRadio.setLanguage(checkedLang);
+  greetRadio.setName(person);
+  greetRadio.greet();
+
+  greetTxt.innerHTML = greetRadio.greetName();
+  counter.innerHTML = greetRadio.counter();
+
+  localStorage['count']= greetRadio.counter();
     
-    greetTxt.innerHTML = greetRadio.greetName();
-    counter.innerHTML = greetRadio.append();
+  localStorage['namesGreeted'] = JSON.stringify(greetRadio.list());
+    
+})
 
-    localStorage['namesGreeted'] = JSON.stringify(greetRadio.list());
+clearBtn.addEventListener('click', function(e){
+
 })

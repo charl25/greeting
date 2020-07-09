@@ -1,11 +1,10 @@
 function GreetRadio(){
-    const personAppend = 1;
+    let count = 0;
+    let names=[];
 
+    let salute="";
     let hi="";
     let person="";
-    let count=1;
-    let names=[];
-    let limit=20;
 
     function setLanguage(x){
         if(x=== "isixhosa"){
@@ -24,7 +23,8 @@ function GreetRadio(){
     }
 
     function setName(y){
-        if(names.length<limit){
+        if(names[y]=== undefined){
+
         person=y;
         names.push(person)}
     }
@@ -32,17 +32,21 @@ function GreetRadio(){
         return person;
     }
 
-    function greetName(){
-         return getLanguage() + getName();
+    
+    function greet(){
+        if(names[person] === undefined){
+            count++;
+            names[person]=0
+            salute = hi + person;
+        }
     }
-
-    function add(){
-        if(names.length<limit){
-        count += personAppend;}
-    }
-    function append(){
+    function counter(){
         return count
     }
+    function greetName(){
+        return salute;
+    }
+
     function list(){
         return names;
     }
@@ -55,9 +59,9 @@ function GreetRadio(){
         greetName,
         getLanguage,
         getName,
-        add,
-        append,
-        list
+        counter,
+        list,
+        greet
 
     }
 }
