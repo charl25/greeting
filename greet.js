@@ -32,5 +32,9 @@ greetButton.addEventListener('click', function(e){
 })
 
 clearBtn.addEventListener('click', function(e){
+  greetRadio.clear();
+  localStorage['namesGreeted'] = JSON.stringify(greetRadio.list());
+  localStorage['count']= greetRadio.counter();
 
+  location.reload ();
 })

@@ -51,7 +51,10 @@ function GreetRadio(){
         return names;
     }
 
-    
+    function clear(){
+        names=[]
+        count=0
+    }
 
     return{
         setLanguage,
@@ -61,7 +64,8 @@ function GreetRadio(){
         getName,
         counter,
         list,
-        greet
+        greet,
+        clear
 
     }
 }
