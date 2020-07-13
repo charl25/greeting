@@ -7,24 +7,20 @@
     <link rel="stylesheet" href="greet.css">
 </head>
 <body>
-    <div class="center">
+    <div class="container center">
         
         <div >
-        <div>
             <h1>
                 Greeting
             </h1>
-        </div>
-        
-            <div>    
-                <div class="container">
-                    <h5>Name</h5>
-                    <textarea name="name" id="" cols="30" rows="1" class="greetArea"></textarea>
-                    <span class="counter">0</span>
-                </div>
+            
+            <div>
+                <h5>Enter Name</h5>
+                <textarea placeholder="Charles" name="name" id="" cols="30" class="greetArea"></textarea>
+                <span class="counter">0</span>
             </div>
             
-            <div >
+            <div class="container">
                 <label class="">
                     <input type="radio" name="language" class="languageRadio" value="english">
                     <span class="label-body" >English</span>
@@ -39,9 +35,9 @@
                   </label>
             </div>
 
-            <div>
-                <button class="greetBtn"> Greet me</button>
-                <button class="clearBtn"> Clear Storage</button>
+            <div class="container">
+                <button class="greetBtn container"> Greet me</button>
+                <button class="clearBtn container"> Clear Storage</button>
             </div>
 
             <div>
